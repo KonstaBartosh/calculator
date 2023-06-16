@@ -17,21 +17,24 @@ numbers.forEach((number) => {
   number.addEventListener("click", () => {
     let buttonNumber = number.textContent;
 
-    if (isOperatorClicked) {
-      display.textContent += buttonNumber; // concatenating numbers
-      b = parseInt(b + buttonNumber); // convert the concatenated string to a number
-    } else {
+    if (!isOperatorClicked) {
       display.textContent += buttonNumber;
-      a = parseInt(a + buttonNumber);
+      a = Number(a + buttonNumber);
+      console.log("A:" + typeof a);
+    } else {
+      display.textContent += buttonNumber; // concatenating numbers
+      b = Number(b + buttonNumber); // convert the concatenated string to a number
+      console.log("B:" + typeof b);
     }
   });
 });
 
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
-    isOperatorClicked = true;
     let result = operator.textContent;
     display.textContent = result;
+
+    isOperatorClicked = true;
     operand = result;
   });
 });
@@ -52,6 +55,7 @@ const operate = (operand, a, b) => {
       return multiplyNumbers(a, b);
     case "÷":
       return divideNumbers(a, b);
+    default:
   }
 };
 
@@ -59,12 +63,14 @@ clear.addEventListener("click", () => {
   display.textContent = "";
   a = "";
   b = "";
-  operand = "";
+	operand = "";
 });
 
 equal.addEventListener("click", () => {
   display.textContent = operate(operand, a, b);
-  a = "";
-  b = "";
-  operand = "";
+	a = operate(operand, a, b);
+	display.textContent = a;
+	b = ""; // reset the value of `b` for the next calculation
+	operand = ""; // reset the operand
+	isOperatorClicked = false; // reset the operator clicked flag
 });
