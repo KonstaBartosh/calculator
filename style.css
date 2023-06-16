@@ -1,9 +1,11 @@
 .page {
+	height: 100vh;
 	font-size: 24px;
 	color: black;
 	font-family: 'Courier New', Courier, monospace;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .container {
@@ -16,9 +18,14 @@
 }
 
 .display {
+	font-size: 34px;
 	height: 90px;
 	background-color:beige;
 	border: 1px solid black;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding: 5px;
 }
 
 .toolbar {
