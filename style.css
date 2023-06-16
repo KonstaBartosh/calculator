@@ -4,6 +4,7 @@
 	color: black;
 	font-family: 'Courier New', Courier, monospace;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -39,4 +40,10 @@
 	min-width: 60px;
 	min-height: 60px;
 	font-size: 16px;
+}
+
+.footer {
+	font-size: 18px;
+	position: absolute;
+	bottom: 20px;
 }
