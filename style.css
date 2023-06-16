@@ -46,4 +46,16 @@
 	font-size: 18px;
 	position: absolute;
 	bottom: 20px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.fa-github {
+	width: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.1);
 }
