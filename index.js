@@ -23,6 +23,7 @@ numbers.forEach((number) => {
       a = Number(a + buttonNumber);
       console.log("A:" + typeof a);
     } else {
+      display.textContent = ""
       display.textContent += buttonNumber; // concatenating numbers
       b = Number(b + buttonNumber); // convert the concatenated string to a number
       console.log("B:" + typeof b);
@@ -30,12 +31,11 @@ numbers.forEach((number) => {
   });
 });
 
+
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     isOperatorClicked = true;
-
     operand = operator.textContent;
-    display.textContent = "";
   });
 });
 
