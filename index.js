@@ -13,6 +13,7 @@ let b = "";
 let operand = "";
 let isOperatorClicked = false;
 
+
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
     let buttonNumber = number.textContent;
@@ -31,11 +32,10 @@ numbers.forEach((number) => {
 
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
-    let result = operator.textContent;
-    display.textContent = result;
-
     isOperatorClicked = true;
-    operand = result;
+
+    operand = operator.textContent;
+    display.textContent = "";
   });
 });
 
