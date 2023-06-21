@@ -10,7 +10,7 @@ const operators = document.querySelectorAll(".operator");
 
 let a = "";
 let b = "";
-let operand = "";
+let symbol = "";
 let isOperatorClicked = false;
 
 
@@ -35,7 +35,7 @@ numbers.forEach((number) => {
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     isOperatorClicked = true;
-    operand = operator.textContent;
+    symbol = operator.textContent;
   });
 });
 
@@ -45,8 +45,8 @@ const subtractNumbers = (a, b) => a - b;
 const multiplyNumbers = (a, b) => a * b;
 const divideNumbers = (a, b) => a / b;
 
-const operate = (operand, a, b) => {
-  switch (operand) {
+const operate = (symbol, a, b) => {
+  switch (symbol) {
     case "+":
       return addNumbers(a, b);
     case "-":
@@ -63,14 +63,14 @@ clear.addEventListener("click", () => {
   display.textContent = "";
   a = "";
   b = "";
-	operand = "";
+	symbol = "";
 });
 
 equal.addEventListener("click", () => {
-  display.textContent = operate(operand, a, b);
-	a = operate(operand, a, b);
+  display.textContent = operate(symbol, a, b);
+	a = operate(symbol, a, b);
 	display.textContent = a;
 	b = ""; // reset the value of `b` for the next calculation
-	operand = ""; // reset the operand
+	symbol = ""; // reset the operator
 	isOperatorClicked = false; // reset the operator clicked flag
 });
