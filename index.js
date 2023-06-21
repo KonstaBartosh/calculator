@@ -19,14 +19,18 @@ numbers.forEach((number) => {
     let buttonNumber = number.textContent;
 
     if (!isOperatorClicked) {
-      display.textContent += buttonNumber;
       a = Number(a + buttonNumber);
-      console.log("A:" + typeof a);
+      display.textContent = a; // displayin A and concatenating
+
+      console.log("A:" + typeof a + Number(a));
+      console.log(isOperatorClicked);
     } else {
       display.textContent = ""; // clearing display after pushin A number
-      display.textContent += buttonNumber; // concatenating numbers
       b = Number(b + buttonNumber); // convert the concatenated string to a number
-      console.log("B:" + typeof b);
+      display.textContent += b; // displayin B and concatenating
+
+      console.log("B:" + typeof b + Number(b));
+      console.log(isOperatorClicked);
     }
   });
 });
@@ -34,7 +38,12 @@ numbers.forEach((number) => {
 //** handling with symbols */
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
-    isOperatorClicked = true;
+    if (isOperatorClicked === true) {
+      isOperatorClicked = false;
+    } else {
+      isOperatorClicked = true;
+    }
+    
     symbol = operator.textContent;
   });
 });
