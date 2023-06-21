@@ -7,13 +7,13 @@ const display = document.querySelector(".display");
 const clear = document.querySelector(".clear");
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
+let isOperatorClicked = false;
 
 let a = "";
 let b = "";
 let symbol = "";
-let isOperatorClicked = false;
 
-
+//** handling with numbers */
 numbers.forEach((number) => {
   number.addEventListener("click", () => {
     let buttonNumber = number.textContent;
@@ -23,7 +23,7 @@ numbers.forEach((number) => {
       a = Number(a + buttonNumber);
       console.log("A:" + typeof a);
     } else {
-      display.textContent = ""
+      display.textContent = ""; // clearing display after pushin A number
       display.textContent += buttonNumber; // concatenating numbers
       b = Number(b + buttonNumber); // convert the concatenated string to a number
       console.log("B:" + typeof b);
@@ -31,7 +31,7 @@ numbers.forEach((number) => {
   });
 });
 
-
+//** handling with symbols */
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     isOperatorClicked = true;
@@ -39,12 +39,14 @@ operators.forEach((operator) => {
   });
 });
 
-//* basic math operators */
+//* basic math operations */
 const addNumbers = (a, b) => a + b;
 const subtractNumbers = (a, b) => a - b;
 const multiplyNumbers = (a, b) => a * b;
-const divideNumbers = (a, b) => a / b;
+const divideNumbers = (a, b) => (a === 0 || b === 0) ? 'Undefined' : a / b;
 
+
+//** operating with operands depends on a symbol */
 const operate = (symbol, a, b) => {
   switch (symbol) {
     case "+":
@@ -64,6 +66,7 @@ clear.addEventListener("click", () => {
   a = "";
   b = "";
 	symbol = "";
+  isOperatorClicked = false;
 });
 
 equal.addEventListener("click", () => {
