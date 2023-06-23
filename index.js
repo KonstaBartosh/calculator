@@ -20,14 +20,14 @@ numbers.forEach((number) => {
 
     if (!isOperatorClicked) {
       a = Number(a + buttonNumber);
-      display.textContent = a; // displayin A and concatenating
+      display.textContent = a; // displaying A and concatenating
 
       console.log("A:" + typeof a + Number(a));
       console.log(isOperatorClicked);
     } else {
       display.textContent = ""; // clearing display after pushin A number
       b = Number(b + buttonNumber); // convert the concatenated string to a number
-      display.textContent += b; // displayin B and concatenating
+      display.textContent = b; // displaying B and concatenating
 
       console.log("B:" + typeof b + Number(b));
       console.log(isOperatorClicked);
