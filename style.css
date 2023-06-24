@@ -2,6 +2,7 @@
 	height: 100vh;
 	font-size: 24px;
 	color: black;
+	background-color: #16181d;
 	font-family: 'Courier New', Courier, monospace;
 	display: flex;
 	flex-direction: column;
@@ -10,12 +11,19 @@
 }
 
 .container {
+	max-width: 300px;
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
-	border: 1px solid black;
+	border: 1px solid #f6f7f9;
+	background-color: #876fc5;
 	padding: 10px;
 	border-radius: 10px;
+}
+
+.row {
+	display: flex;
+	gap: 5px;
 }
 
 .display {
@@ -42,6 +50,17 @@
 	font-size: 16px;
 }
 
+.clear {
+	display: flex;
+	width: 255px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-family: inherit;
+}
+
 /* footer */
 .footer {
 	font-size: 18px;
@@ -50,6 +69,7 @@
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	color:#f6f7f9;
 }
 
 .logo-github {
