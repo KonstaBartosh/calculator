@@ -9,10 +9,9 @@
   const operators = document.querySelectorAll(".operator");
   let isOperatorClicked = false;
 
-  let a = "";
-  let b = "";
-  let symbol = "";
-  let result = ''
+  let a = '';
+  let b = '';
+  let symbol = '';
 
   //** handling with numbers */
   numbers.forEach((number) => {
@@ -20,14 +19,14 @@
       let buttonNumber = number.textContent;
 
       if (!isOperatorClicked) {
-        a = Number(a + buttonNumber);
-        display.textContent = a; // displaying A and concatenating
+        a = Number(a + buttonNumber); // convert the concatenated string to a number
+        display.textContent = a; // displaying A
 
         console.log(`A: ${Number (a)} ${typeof a} ${isOperatorClicked}`);
       } else {
-        display.textContent = ""; // clearing display after pushin A number
-        b = Number(b + buttonNumber); // convert the concatenated string to a number
-        display.textContent = b; // displaying B and concatenating
+        display.textContent = ''; // clearing display after clicking A number
+        b = Number(b + buttonNumber);
+        display.textContent = b; // displaying B
 
         console.log(`B: ${Number (b)} ${typeof b} ${isOperatorClicked}`);
       }
@@ -37,10 +36,13 @@
   //** handling with symbols */
   operators.forEach((operator) => {
     operator.addEventListener("click", () => {
+      //** dealing with multyple operations */
       if (a && b) {
         a = operate(symbol, a, b);
-        b = "";
+        b = '';
         display.textContent = a;
+        console.log(a)
+        console.log(b)
       }
       
       isOperatorClicked = true;
@@ -72,10 +74,10 @@
   };
 
   clear.addEventListener("click", () => {
-    display.textContent = "";
-    a = "";
-    b = "";
-    symbol = "";
+    display.textContent = '';
+    a = '';
+    b = '';
+    symbol = '';
     isOperatorClicked = false;
   });
 
@@ -83,10 +85,8 @@
     if (a && b && symbol) {
       a = operate(symbol, a, b);
       display.textContent = a;
-      b = "";
-      symbol = "";
+      b = '';
+      symbol = '';
       isOperatorClicked = false;
     }
   });
-  
-  
