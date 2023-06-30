@@ -2,6 +2,11 @@
 
 Simple calculator made on native JavaScript
 
+-- You should round answers with long decimals so that they don’t overflow the screen.
+-- Pressing = before entering all of the numbers or an operator could cause problems!
+-- Pressing “clear” should wipe out any existing data.. make sure the user is really starting fresh after pressing “clear”
+-- Display a snarky error message if the user tries to divide by 0… and don’t let it crash your calculator!
+
 Вместо повторяющегося кода в обработчиках событий чисел и операторов, можно создать функцию, которая будет обрабатывать клики на кнопки чисел и операторов. Затем присвоить эту функцию в соответствующих обработчиках событий. Это упростит код и сделает его более лаконичным.
 
 Функции addNumbers, subtractNumbers, multiplyNumbers и divideNumbers можно объединить в одну общую функцию performOperation, которая будет принимать оператор и операнды, а затем выполнять соответствующую операцию. Это позволит избежать повторения кода и сделает его более модульным.
