@@ -1,6 +1,6 @@
 # Calculator
 
-Simple [calculator](https://github.com/KonstaBartosh/calculator)  made on native JavaScript
+Simple [calculator](https://konstabartosh.github.io/calculator/)  made on native JavaScript
 
 Things to do:
 - You should round answers with long decimals so that they don’t overflow the screen.
