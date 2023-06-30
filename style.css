@@ -72,11 +72,12 @@
 	color:#f6f7f9;
 }
 
+/* logo */
 .logo-github {
 	width: 25px;
   transition: transform 0.3s ease-in-out;
 }
 
-.fa-github:hover {
+.logo-github:hover {
   transform: rotate(360deg) scale(1.1);
 }
