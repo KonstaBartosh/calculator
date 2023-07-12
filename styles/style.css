@@ -1,6 +1,5 @@
 body {
 	height: 100vh;
-	
 }
 
 .page {
@@ -77,9 +76,7 @@ body {
 /* footer */
 .footer {
 	height: 10%;
-	padding: 10px;
 	display: flex;
-	flex-shrink: 1;
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 18px;
 	align-items: center;
