@@ -21,14 +21,10 @@
       if (!isOperatorClicked) {
         a = Number(a + buttonNumber); // convert the concatenated string to a number
         display.textContent = a; // displaying A
-
-        console.log(`A: ${Number (a)} ${typeof a} ${isOperatorClicked}`);
       } else {
         display.textContent = ''; // clearing display after clicking A number
         b = Number(b + buttonNumber);
         display.textContent = b; // displaying B
-
-        console.log(`B: ${Number (b)} ${typeof b} ${isOperatorClicked}`);
       }
     });
   });
